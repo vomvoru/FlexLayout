@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  dev:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - '8080:8080'
+      - '9001:9001'
+    command: "npm run dev"
